@@ -30,6 +30,7 @@ service-ticket-sdk @ git+https://github.com/plumsgo/chatapp-sdks.git@v2.0.0#subd
 | `requirements-gate-stack.txt` | `auth70-sdk`, `service-ticket-sdk`, `gate-auth-sdk[fastapi]` |
 | `requirements-bot-sdks.txt` | `service-ticket-sdk`, `ai-text-sdk` |
 | `requirements-ticket-and-storage.txt` | `service-ticket-sdk`, `storage-sdk` |
+| `requirements-gate-and-storage.txt` | Gate stack + `storage-sdk` (`profile_gate`) |
 
 When installing `gate-auth-sdk` from Git, list `auth70-sdk` and `service-ticket-sdk` first (or use a bundle file above) so pip does not try to resolve them from PyPI.
 
