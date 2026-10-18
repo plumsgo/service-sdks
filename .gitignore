@@ -1,0 +1,41 @@
+# macOS
+.DS_Store
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Packaging / editable installs (pip install -e .)
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
+
+# Optional tool caches (if you add these later)
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+
+# Local secrets (keep .env.example if you add one)
+.env
+.env.*
+!.env.example
+
+# JetBrains; uncomment if the team uses shared VS Code settings
+.idea/

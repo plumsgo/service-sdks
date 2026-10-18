@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gate-auth-sdk"
+version = "2.0.0"
+description = "Edge-gate adapter: accept a user token or inbound service ticket, remint an outbound service ticket, forward HTTP. Not an identity protocol."
+requires-python = ">=3.11"
+dependencies = [
+    "auth70-sdk>=2.0.0",
+    "httpx>=0.25",
+    "python-jose[cryptography]>=3.3",
+    "service-ticket-sdk>=2.0.0",
+]
+
+[project.optional-dependencies]
+fastapi = ["fastapi>=0.104"]
+dev = ["pytest>=7", "pytest-asyncio>=0.23", "fastapi>=0.104"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+gate_auth_sdk = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+asyncio_mode = "auto"

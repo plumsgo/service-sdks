@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "service-ticket-sdk"
+version = "2.0.0"
+description = "Shared-secret service tickets: iss/sub is the caller, aud is the callee. Not a user-token SDK."
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2",
+    "python-jose[cryptography]>=3.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+service_ticket_sdk = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

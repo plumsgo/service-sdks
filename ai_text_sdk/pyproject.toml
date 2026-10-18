@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-text-sdk"
+version = "1.0.0"
+description = "HTTP client for the text generation service. Callers mint the service ticket."
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.25",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

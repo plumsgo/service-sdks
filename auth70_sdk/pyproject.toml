@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "auth70-sdk"
+version = "2.0.0"
+description = "Auth70 client: verify user access tokens, call session APIs, parse identity events."
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.25",
+    "pydantic>=2",
+    "python-jose[cryptography]>=3.3",
+]
+
+[project.optional-dependencies]
+fastapi = ["fastapi>=0.104"]
+dev = ["pytest>=7", "fastapi>=0.104"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+asyncio_mode = "auto"
