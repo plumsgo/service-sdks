@@ -6,19 +6,16 @@ HTTP / auth client libraries for ChatApp microservices. Each package is a standa
 
 Pin a **tag** or **commit** (do not rely on floating branches in production).
 
-In a microservice `requirements.txt`:
-
-```text
--r https://raw.githubusercontent.com/plumsgo/chatapp-sdks/v2.0.0/requirements-from-git.txt
-```
-
-That file lists all five SDKs in an order that satisfies cross-package dependencies. Services that only need a subset may still include the whole file (harmless extra packages) or copy individual lines from it.
-
-Example single package (PEP 508):
+In each microservice `requirements.txt`, list only the SDKs that service needs, one PEP 508 line per package:
 
 ```text
 service-ticket-sdk @ git+https://github.com/plumsgo/chatapp-sdks.git@v2.0.0#subdirectory=service_ticket_sdk
+gate-auth-sdk[fastapi] @ git+https://github.com/plumsgo/chatapp-sdks.git@v2.0.0#subdirectory=gate_auth_sdk
 ```
+
+When a service uses `gate-auth-sdk`, install `auth70-sdk` and `service-ticket-sdk` from the same tag **before** it in the file so pip does not try to resolve them from PyPI.
+
+`requirements-from-git.txt` in this repo lists all five packages in a safe order; copy lines from it, do not `-r` it from production services unless you intentionally want every SDK.
 
 ### Private repository
 
@@ -40,4 +37,4 @@ cd auth70_sdk && pip install -e ".[dev]"
 
 1. Bump `version` in each affected `pyproject.toml`.
 2. Commit, tag the repo (e.g. `v2.0.0`), push the tag.
-3. Update microservice `requirements.txt` refs to the new tag.
+3. Update each microservice’s git ref (`@v2.0.0`) on the lines it uses.

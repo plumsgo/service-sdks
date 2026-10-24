@@ -32,10 +32,9 @@ htmlcov/
 .tox/
 .nox/
 
-# Local secrets (keep .env.example if you add one)
+# Local secrets
 .env
 .env.*
-!.env.example
 
 # JetBrains; uncomment if the team uses shared VS Code settings
 .idea/
