@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "auth70-sdk"
 version = "2.0.0"
-description = "Auth70 client: verify user access tokens, call session APIs, parse identity events."
+description = "Auth70 client: verify user access tokens and call session APIs."
 requires-python = ">=3.11"
 dependencies = [
     "httpx>=0.25",

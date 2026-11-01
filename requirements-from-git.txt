@@ -1,5 +1,5 @@
-auth70-sdk @ git+https://github.com/plumsgo/chatapp-sdks.git@v2.0.0#subdirectory=auth70_sdk
-service-ticket-sdk @ git+https://github.com/plumsgo/chatapp-sdks.git@v2.0.0#subdirectory=service_ticket_sdk
-storage-sdk @ git+https://github.com/plumsgo/chatapp-sdks.git@v2.0.0#subdirectory=storage_sdk
-ai-text-sdk @ git+https://github.com/plumsgo/chatapp-sdks.git@v2.0.0#subdirectory=ai_text_sdk
-gate-auth-sdk[fastapi] @ git+https://github.com/plumsgo/chatapp-sdks.git@v2.0.0#subdirectory=gate_auth_sdk
+auth70-sdk @ git+https://github.com/plumsgo/service-sdks.git@v2.0.0#subdirectory=auth70_sdk
+service-ticket-sdk @ git+https://github.com/plumsgo/service-sdks.git@v2.0.0#subdirectory=service_ticket_sdk
+storage-sdk @ git+https://github.com/plumsgo/service-sdks.git@v2.0.0#subdirectory=storage_sdk
+ai-text-sdk @ git+https://github.com/plumsgo/service-sdks.git@v2.0.0#subdirectory=ai_text_sdk
+gate-auth-sdk[fastapi] @ git+https://github.com/plumsgo/service-sdks.git@v2.0.0#subdirectory=gate_auth_sdk

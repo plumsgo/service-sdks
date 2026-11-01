@@ -4,7 +4,7 @@
 
 本库**不含**任何业务服务名、audience 表或 FastAPI 依赖。谁可以打谁，由各服务自己声明。
 
-与 ChatApp 现网票的 claims **同形**：两边互签可以互验。
+与现网服务票的 claims **同形**：两边互签可以互验。
 
 ## 安装
 
@@ -92,9 +92,9 @@ def require_service(authorization: str | None):
 - 服务调服务 → 本库
 - 用户 JWT **不要**转发给下游。需要「替谁办事」时写 `acting_*`，由网关或 BFF 验过用户票后再签服务票。
 
-## 和 ChatApp 互通时
+## 和别的服务互通时
 
-ChatApp 侧 audience 名册在 `contracts.runtime.service_identity.SERVICE_AUDIENCE`（例如 `room:internal`、`chat-router:realtime`）。对方服务要把你的 `iss` 加进它的 `allowed_issuers`，你也要把对方加进自己的白名单，并共用同一 `SERVICE_JWT_SECRET`。
+audience 由各服务自己声明（例如 `ledger:internal`）。对方要把你的 `iss` 加进它的 `allowed_issuers`，你也要把对方加进自己的白名单，并共用同一把 `SERVICE_JWT_SECRET`。
 
 ## 不是什么
 
