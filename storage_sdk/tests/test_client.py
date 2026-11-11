@@ -49,7 +49,6 @@ def test_issue_complete_get_sign_delete():
             channel="generated",
             namespace="images",
             content_type="image/png",
-            requested_for_subject="u1",
         )
         assert issued["upload"]["url"] == "http://up"
         completed = await client.complete("svc-token", "o1")

@@ -54,7 +54,6 @@ class StorageClient:
         namespace: str,
         content_type: str,
         size_bytes: Optional[int] = None,
-        requested_for_subject: Optional[str] = None,
     ) -> dict:
         body: dict = {
             "channel": channel,
@@ -63,8 +62,6 @@ class StorageClient:
         }
         if size_bytes is not None:
             body["size_bytes"] = size_bytes
-        if requested_for_subject:
-            body["requested_for_subject"] = requested_for_subject
         return await request_json(
             self.http,
             "POST",
